@@ -27,7 +27,8 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    int_features = [x for x in request.form.values()]
+    int_features = [int(x) for x in request.form.values()]
+    print("Data", int_features)
     final_features = [np.array(int_features)]
     prediction = classifier.predict(final_features)
 
